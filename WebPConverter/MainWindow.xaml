@@ -1,0 +1,82 @@
+﻿<Window x:Class="WebPConverter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WebPConverter"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="WebPConverter" Height="200" Width="400">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <!-- Блок указания пути конвертации -->
+        <TextBlock Text="Папка для конвертации:"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Grid.Row="0"/>
+        <!-- Поле с путём к папке -->
+        <TextBox x:Name="ConvertPath"
+                 Padding="5"
+                 Grid.Column="0"
+                 Grid.Row="1"/>
+        <!-- Кнопка запуска конвертации -->
+        <Button x:Name="ConvertPathBrowse"
+                Content="Обзор..."
+                Margin="5, 2"
+                Grid.Column="1"
+                Grid.Row="1"/>
+
+        <!-- Чекбокс переноса файлов -->
+        <CheckBox x:Name="MoveCheckBox"
+                  Grid.Column="0"
+                  Grid.Row="2"
+                  Grid.ColumnSpan="2"
+                  VerticalAlignment="Center"
+                  Content="Перенести оригинальные файлы" />
+
+        <!-- Текстовое поле прогресса загрузки -->
+        <TextBlock x:Name="ConvertProgressText"
+                   Grid.Column="0"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center"
+                   Panel.ZIndex="1"
+                   Grid.ColumnSpan="2"
+                   Grid.Row="3"/>
+        <!-- Прогрессбар конвертации -->
+        <ProgressBar x:Name="ConvertProgress"
+                     Grid.Column="0"
+                     Margin="0, 4"
+                     Grid.ColumnSpan="2"
+                     Grid.Row="3" 
+                     Foreground="#FF5AF0FF"/>
+
+        <!-- Поле кнопки конвертации -->
+        <Grid Grid.Row="4"
+              Grid.Column="0"
+              Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Конпка запуска конвертации -->
+            <Button x:Name="StartButton"
+                    Content="Сконвертировать!"
+                    Margin="0, 5"
+                    Grid.Column="1"/>
+        </Grid>
+    </Grid>
+</Window>
